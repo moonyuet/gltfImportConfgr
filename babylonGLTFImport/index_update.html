@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>GLTF Custom COnfigurator V1.1</title>
+    <style>
+        #canvas {
+            width: 100%;
+            height: 100%;
+        }
+        
+        #c-left,
+        #c-right {
+            position: relative;
+            display: inline-block;
+            height: 100%;
+            width: 50%;
+        }
+        
+        #c-right {
+            float: right;
+            left: 150px;
+        }
+        
+        #c-basetextposition {
+            position: relative;
+            top: 100px;
+        }
+        
+        #lnkDownload {
+            border: 1px solid rgb(196, 196, 196);
+            text-decoration: none;
+            color: rgb(48, 47, 47);
+            font-weight: bold;
+            background-color: rgb(197, 197, 197);
+            padding: 10px;
+            margin-top: 15px;
+            display: inline-block;
+        }
+    </style>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.babylonjs.com/babylon.max.js"></script>
+    <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+    <script src="https://preview.babylonjs.com/serializers/babylonjs.serializers.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.1.0/fabric.min.js"></script>
+
+</head>
+
+<body>
+    <div id="c-left">
+        <canvas id="canvas"></canvas>
+
+        <script src="meshInputWithTexture.js"></script>
+        <div id="c-basetextposition">
+            <b>Base Color Map (Drag this to your Mesh)<span style="position:relative; left:30px;"> Normal Map</span><span style="position:relative; left:220px;"> Metallic Roughness Map</span></b>
+
+        </div>
+
+        <img id="imgfile" width="258px" draggable="true" style="position: relative; top:100px; z-index: 10000;" />'
+        <img id="nrm" width="258px" draggable="false" style="position:relative; top:100px; left:50px; z-index: 10000;" />'
+        <img id="mtlrough" width="258px" draggable="false" style="position:relative; top:100px; left:75px; z-index: 10000;" />'
+    </div>
+
+    <div id="c-right">
+        <p><b>Envrionment Texture Import(Accepted Format:.hdr)</b></p>
+
+        <p><input id="env" class="glb" type='file' accept=".hdr" /></p>
+
+        <p><b>GLTF Model Import</b></p>
+
+        <p><input id="model-load" class="gltf" type='file' accept=".gltf" /></p>
+
+        <p><b>GLB Model Import</b></p>
+
+        <p><input id="glb-load" class="glb" type='file' accept=".glb" /></p>
+
+        <p><b>Take Your Picture</b></p>
+
+        <p><button class="snshot">ScreenCapture</button></p>
+
+        <p><b>Clean Up All Scenes</b></p>
+
+        <p><button class="del_all">Delete</button></p>
+
+        <p><b>Base Color Map Import</b></p>
+
+        <p><input id="img" type='file' accept=".jpg,.png" /></p>
+
+        <p><b>Normal Map Import</b></p>
+
+        <p><input id="nrmImg" type='file' accept=".jpg,.png" /></p>
+
+        <p><b>Metallic Roughness Map Import</b></p>
+
+        <p><input id="mtlroughimg" type='file' accept=".jpg,.png" /></p>
+
+
+        <p><b>Delete Your Imported Textures</b></p>
+
+        <p><button class="del_texture">Delete Texture</button></p>
+
+
+        <canvas id="canvas2"></canvas>
+
+
+    </div>
+</body>
+
+</html>
